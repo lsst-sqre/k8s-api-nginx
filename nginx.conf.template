@@ -1,0 +1,37 @@
+http {
+
+  server {
+    listen 80                default_server;
+    listen [::]:80           default_server;
+    server_name              _;
+    return                  301 https://$host$request_uri;
+  }
+
+  server {
+    listen 443               default_server;
+    server_name              api.lsst.codes;
+    ssl_certificate          /etc/tls/api.lsst.codes.crt;
+    ssl_certificate_key      /etc/tls/api.lsst.codes.key;
+  }
+}
+
+location /bldstatus/ {
+  proxy_pass http://${U_BLDSTATUS_SERVICE_HOST}:${U_BLDSTATUS_SERVICE_PORT}
+}
+
+location /ccutter/ {
+  proxy_pass http://${U_CCUTTER_SERVICE_HOST}:${U_CCUTTER_SERVICE_PORT}
+}
+
+location /ltdstatus/ {
+  proxy_pass http://${U_LTDSTATUS_SERVICE_HOST}:${U_LTDSTATUS_SERVICE_PORT}
+}
+
+location /metricdev/ {
+  proxy_pass http://${U_METRICDEV_SERVICE_HOST}:${U_METRICDEV_SERVICE_PORT}
+}
+
+  location /status/ {
+    proxy_pass http://${U_STATUS_SERVICE_HOST}:${U_STATUS_SERVICE_PORT}
+  }
+}
