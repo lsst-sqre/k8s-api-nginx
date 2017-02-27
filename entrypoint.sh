@@ -16,7 +16,6 @@ for i in BLDSTATUS CCUTTER LTDSTATUS METRICDEV STATUS; do
 	set_config U_${i}_SERVICE_${j}
     done
 done
-
 echo "----nginx.conf----"
 cat /nginx.conf
 echo "------------------"
