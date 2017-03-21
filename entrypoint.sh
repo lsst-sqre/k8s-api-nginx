@@ -11,7 +11,7 @@ set_config() {
 }
 
 set_config HOSTNAME
-for i in BLDSTATUS CCUTTER LTDSTATUS METRICDEV STATUS; do
+for i in BLDSTATUS CCUTTER LTDSTATUS METRICDEV STATUS LTDINDEXER; do
     for j in HOST PORT; do
 	set_config U_${i}_SERVICE_${j}
     done
