@@ -2,7 +2,7 @@ FROM        nginx
 MAINTAINER  sqre-admin
 LABEL       description="SSL termination and proxy for SQuaRE microservices" \
             name="lsstsqre/k8s-api-nginx"
-ARG         VERSION="0.0.4"
+ARG         VERSION="0.0.5"
 LABEL       version="$VERSION"
 COPY        nginx.conf /
 COPY        entrypoint.sh /
