@@ -45,9 +45,7 @@ The `nginx.conf` file contains both TLS settings and proxy mappings.
 
 #### TLS Settings
 
-SSL settings are largely taken from [Strong SSL Security on
-nginx](https://raymii.org/s/tutorials/Strong_SSL_Security_On_nginx.html
-"Strong SSL Security on nginx").
+The TLS settings are from the [Mozilla SSL Configuration Generator](https://ssl-config.mozilla.org/) using the intermediate settings option.
 
 #### Proxy Mappings
 
